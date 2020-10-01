@@ -12,7 +12,7 @@ def home():
 
     if request.method == "POST" and ((not num.isdigit()) or ((int(num) > 3999) or (int(num) < 1))):
        
-        return render_template("index.html", developer_name = "Group Kilo", not_valid = "True")
+        return render_template("index.html", developer_name = "Osman Sakli", not_valid = "True")
         
     elif request.method == "POST":
         def convert(number):     
@@ -26,10 +26,10 @@ def home():
                     number %= value
             return result
 
-        return render_template('result.html',number_roman = convert(num), number_decimal= num, developer_name = "Group Kilo")
+        return render_template('result.html',number_roman = convert(num), number_decimal= num, developer_name = "Osman Sakli")
 
     else:
-        return render_template("index.html", developer_name = "Group Kilo")
+        return render_template("index.html", developer_name = "Osman Sakli")
 
 
 
