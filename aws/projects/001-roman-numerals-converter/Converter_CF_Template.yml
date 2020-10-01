@@ -32,7 +32,7 @@ Resources:
  WebServerInstance:
   Type: "AWS::EC2::Instance"
   Properties:
-    ImageId: ami-0c94855ba95c71c99
+    ImageId: ami-0947d2ba12ee1ff75
     InstanceType: t2.micro
     KeyName: !Ref ConverterKey
     SecurityGroupIds:
@@ -51,17 +51,22 @@ Resources:
 
            pip3 install flask
 
-           #getting index.html, result.html, converter_app.py
+           cd /home/ec2-user 
+
+           wget https://raw.githubusercontent.com/osmansakli/AWS-DevOps-Projects/master/aws/projects/001-roman-numerals-converter/osman-converter.py
+
            
            mkdir templates
            cd templates 
 
-           wget https://raw.githubusercontent.com/fianchettogianni/clarusway-aws-devops-workshop/master/aws/projects/001-roman-numerals-converter/templates/index.html
-           wget https://raw.githubusercontent.com/fianchettogianni/clarusway-aws-devops-workshop/master/aws/projects/001-roman-numerals-converter/templates/result.html
+           wget https://raw.githubusercontent.com/osmansakli/AWS-DevOps-Projects/master/aws/projects/001-roman-numerals-converter/templates/index.html
+           wget https://raw.githubusercontent.com/osmansakli/AWS-DevOps-Projects/master/aws/projects/001-roman-numerals-converter/templates/result.html
            
            cd ..
-           wget https://raw.githubusercontent.com/fianchettogianni/clarusway-aws-devops-workshop/master/aws/projects/001-roman-numerals-converter/converter_app.py
-           python3 Group_Kilo_Roman.py
+
+           python3 osman-converter.py
+         
+           
 
 Outputs:
   WebSiteURL:
